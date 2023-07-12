@@ -43,7 +43,7 @@ namespace TestApp.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("period/range")]
         public ActionResult<IEnumerable<WeatherForecast>> GetForDateRange([FromQuery][Required] DateTime fromDate, [FromQuery][Required] DateTime toDate)
         {
             try
