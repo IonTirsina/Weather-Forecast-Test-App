@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using TestApp.Enums;
 using TestApp.Services;
 
@@ -28,7 +29,7 @@ namespace TestApp.Controllers
         {
             var periodInDays = (int)period;
 
-            var weatherForecast = _weatherForecastService.get(periodInDays);
+            var weatherForecast = _weatherForecastService.getForDays(periodInDays);
 
             return Ok(weatherForecast);
         }
@@ -36,9 +37,29 @@ namespace TestApp.Controllers
         [HttpGet("{days:int}")]
         public ActionResult<IEnumerable<WeatherForecast>> GetForDays(int days)
         {
-            var weatherForecast = _weatherForecastService.get(days);
+            try
+            {
+                var weatherForecast = _weatherForecastService.getForDays(days);
 
-            return Ok(weatherForecast);
+                return Ok(weatherForecast);
+            } catch(ArgumentOutOfRangeException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<WeatherForecast>> GetForDateRange([FromQuery][Required] DateTime fromDate, [FromQuery][Required] DateTime toDate)
+        {
+            try
+            {
+                var weatherForecast = _weatherForecastService.getForDateRange(fromDate, toDate);
+
+                return Ok(weatherForecast);
+            } catch(ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
