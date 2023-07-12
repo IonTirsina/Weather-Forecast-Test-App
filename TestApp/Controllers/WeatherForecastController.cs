@@ -4,43 +4,41 @@ using TestApp.Services;
 namespace TestApp.Controllers
 {
     [ApiController]
-     [Route("[controller]")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        public WeatherForecastService _service;
+        private readonly WeatherForecastService _weatherForecastService;
+
         public static readonly dynamic[] _summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(
-            ILogger<WeatherForecastController> logger,
-            WeatherForecastService service
+            WeatherForecastService weatherForecastService
         )
         {
-            _logger = logger;
-            _service = service;
+            _weatherForecastService = weatherForecastService;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<WeatherForecast>> Get(int days)
         {
-            return StatusCode(201, _service.get(days));
+            return StatusCode(201, _weatherForecastService.get(days));
         }
 
         [HttpGet("week")]
 
         public ActionResult Get()
         {
-            return StatusCode(201, _service.get(7));
+            return StatusCode(201, _weatherForecastService.get(7));
         }
         [HttpGet("month")]
 
         public IEnumerable<WeatherForecast> GetMonth()
         {
-            return _service.get(31);
+            return _weatherForecastService.get(31);
         }
     }
 }
