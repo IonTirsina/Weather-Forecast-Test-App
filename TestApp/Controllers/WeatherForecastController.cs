@@ -18,7 +18,7 @@ namespace TestApp.Controllers
             _weatherForecastService = weatherForecastService;
         }
 
-        [HttpGet("{period}")]
+        [HttpGet("period/{period}")]
         public ActionResult<IEnumerable<WeatherForecast>> GetForPeriod(WeatherForecastPeriod period)
         {
             var periodInDays = (int)period;
@@ -28,7 +28,7 @@ namespace TestApp.Controllers
             return Ok(weatherForecast);
         }
 
-        [HttpGet("{days:int}")]
+        [HttpGet("period/days/{days}")]
         public ActionResult<IEnumerable<WeatherForecast>> GetForDays(int days)
         {
             try
