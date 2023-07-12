@@ -10,7 +10,7 @@ namespace TestApp.Controllers
     {
         private readonly WeatherForecastService _weatherForecastService;
 
-        public static readonly dynamic[] _summaries = new[]
+        public static readonly string[] _summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };

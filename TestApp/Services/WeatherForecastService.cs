@@ -9,7 +9,7 @@
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Controllers.WeatherForecastController._summaries[Random.Shared.Next(Controllers.WeatherForecastController._summaries.Length)]
-            });
+            }).ToArray();
         }
     }
 }
