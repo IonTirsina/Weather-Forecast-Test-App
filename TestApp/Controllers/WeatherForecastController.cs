@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TestApp.Enums;
 using TestApp.Services;
 
 namespace TestApp.Controllers
@@ -22,23 +23,22 @@ namespace TestApp.Controllers
             _weatherForecastService = weatherForecastService;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<WeatherForecast>> Get(int days)
+        [HttpGet("{period}")]
+        public ActionResult<IEnumerable<WeatherForecast>> GetForPeriod(WeatherForecastPeriod period)
         {
-            return StatusCode(201, _weatherForecastService.get(days));
+            var periodInDays = (int)period;
+
+            var weatherForecast = _weatherForecastService.get(periodInDays);
+
+            return Ok(weatherForecast);
         }
 
-        [HttpGet("week")]
-
-        public ActionResult Get()
+        [HttpGet("{days:int}")]
+        public ActionResult<IEnumerable<WeatherForecast>> GetForDays(int days)
         {
-            return StatusCode(201, _weatherForecastService.get(7));
-        }
-        [HttpGet("month")]
+            var weatherForecast = _weatherForecastService.get(days);
 
-        public IEnumerable<WeatherForecast> GetMonth()
-        {
-            return _weatherForecastService.get(31);
+            return Ok(weatherForecast);
         }
     }
 }
