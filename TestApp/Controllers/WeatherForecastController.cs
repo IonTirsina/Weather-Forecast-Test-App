@@ -4,7 +4,7 @@ using TestApp.Services;
 namespace TestApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         public WeatherForecastService _service;
@@ -32,15 +32,15 @@ namespace TestApp.Controllers
 
         [HttpGet("week")]
 
-        public ActionResult<IEnumerable<WeatherForecast>> Get()
+        public ActionResult Get()
         {
             return StatusCode(201, _service.get(7));
         }
         [HttpGet("month")]
 
-        public ActionResult<IEnumerable<WeatherForecast>> GetMonth()
+        public IEnumerable<WeatherForecast> GetMonth()
         {
-            return StatusCode(201, _service.get(31));
+            return _service.get(31);
         }
     }
 }
