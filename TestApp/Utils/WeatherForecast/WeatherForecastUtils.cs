@@ -1,4 +1,5 @@
-﻿using TestApp.Enums;
+﻿using TestApp.Constants;
+using TestApp.Enums;
 
 namespace TestApp.Utils.WeatherForecast
 {
@@ -13,5 +14,7 @@ namespace TestApp.Utils.WeatherForecast
         }
 
         public static int convertCelsiusToFarenheit(int temperatureC)  => 32 + (int)(temperatureC / 0.5556);
+
+        public static int generateRandomCelsiusTemperature() => Random.Shared.Next(WeatherForecastConstants.MinCelsiusTemperature, WeatherForecastConstants.MaxCelsiusTemperature);
     }
 }

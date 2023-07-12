@@ -1,4 +1,7 @@
-﻿namespace TestApp.Services
+﻿using TestApp.Models;
+using TestApp.Utils.WeatherForecast;
+
+namespace TestApp.Services
 {
     public class WeatherForecastService
     {
@@ -12,7 +15,7 @@
             return Enumerable.Range(1, days).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55)
+                TemperatureC = WeatherForecastUtils.generateRandomCelsiusTemperature()
             }).ToArray();
         }
 
@@ -28,7 +31,7 @@
             return Enumerable.Range(1, differenceInDays).Select(index => new WeatherForecast
             {
                 Date = fromDate.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55)
+                TemperatureC = WeatherForecastUtils.generateRandomCelsiusTemperature()
             }).ToArray();
         }
     }

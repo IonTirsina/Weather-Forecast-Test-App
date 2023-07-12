@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using TestApp.Enums;
+using TestApp.Models;
 using TestApp.Services;
 
 namespace TestApp.Controllers
