@@ -11,5 +11,7 @@ namespace TestApp.Utils.WeatherForecast
 
             return closestTemperatureSummary;
         }
+
+        public static int convertCelsiusToFarenheit(int temperatureC)  => 32 + (int)(temperatureC / 0.5556);
     }
 }

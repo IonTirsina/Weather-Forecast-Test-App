@@ -1,4 +1,3 @@
-using TestApp.Enums;
 using TestApp.Utils.WeatherForecast;
 
 namespace TestApp
@@ -9,8 +8,8 @@ namespace TestApp
 
         public int TemperatureC { get; set; }
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public int TemperatureF => WeatherForecastUtils.convertCelsiusToFarenheit(this.TemperatureC);
 
-        public string? Summary => WeatherForecastUtils.getSummaryFromTemperature(this.TemperatureC).ToString();
+        public string Summary => WeatherForecastUtils.getSummaryFromTemperature(this.TemperatureC).ToString();
     }
 }
