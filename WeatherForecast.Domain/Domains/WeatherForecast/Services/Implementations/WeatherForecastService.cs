@@ -1,6 +1,6 @@
 ﻿namespace TestApp.Domain.WeatherForecast
 {
-    public class WeatherForecastService
+    public class WeatherForecastService: IWeatherForecastService
     {
         public IEnumerable<WeatherForecast> getForDays(int days)
         {

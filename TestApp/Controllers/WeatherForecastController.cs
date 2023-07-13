@@ -8,10 +8,10 @@ namespace TestApp.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly WeatherForecastService _weatherForecastService;
+        private readonly IWeatherForecastService _weatherForecastService;
 
         public WeatherForecastController(
-            WeatherForecastService weatherForecastService
+            IWeatherForecastService weatherForecastService
         )
         {
             _weatherForecastService = weatherForecastService;
