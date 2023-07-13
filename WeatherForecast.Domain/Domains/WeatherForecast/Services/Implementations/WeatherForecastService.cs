@@ -25,7 +25,7 @@
 
             var differenceInDays = toDate.Subtract(fromDate).Days;
             
-            return Enumerable.Range(1, differenceInDays).Select(index => new WeatherForecast
+            return Enumerable.Range(0, differenceInDays + 1).Select(index => new WeatherForecast
             {
                 Date = fromDate.AddDays(index),
                 TemperatureC = WeatherForecastUtils.GenerateRandomCelsiusTemperature()
