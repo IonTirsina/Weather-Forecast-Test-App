@@ -2,7 +2,7 @@
 {
     public class WeatherForecastService: IWeatherForecastService
     {
-        public IEnumerable<WeatherForecast> getForDays(int days)
+        public IEnumerable<WeatherForecast> GetForDays(int days)
         {
             if (days <= 0)
             {
@@ -12,11 +12,11 @@
             return Enumerable.Range(1, days).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = WeatherForecastUtils.generateRandomCelsiusTemperature()
+                TemperatureC = WeatherForecastUtils.GenerateRandomCelsiusTemperature()
             }).ToArray();
         }
 
-        public IEnumerable<WeatherForecast> getForDateRange(DateTime fromDate, DateTime toDate)
+        public IEnumerable<WeatherForecast> GetForDateRange(DateTime fromDate, DateTime toDate)
         {
             if (fromDate >= toDate)
             {
@@ -28,7 +28,7 @@
             return Enumerable.Range(1, differenceInDays).Select(index => new WeatherForecast
             {
                 Date = fromDate.AddDays(index),
-                TemperatureC = WeatherForecastUtils.generateRandomCelsiusTemperature()
+                TemperatureC = WeatherForecastUtils.GenerateRandomCelsiusTemperature()
             }).ToArray();
         }
     }

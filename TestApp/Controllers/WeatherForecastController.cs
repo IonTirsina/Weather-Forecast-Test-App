@@ -22,7 +22,7 @@ namespace TestApp.Controllers
         {
             var periodInDays = (int)period;
 
-            var weatherForecast = _weatherForecastService.getForDays(periodInDays);
+            var weatherForecast = _weatherForecastService.GetForDays(periodInDays);
 
             return Ok(weatherForecast);
         }
@@ -32,7 +32,7 @@ namespace TestApp.Controllers
         {
             try
             {
-                var weatherForecast = _weatherForecastService.getForDays(days);
+                var weatherForecast = _weatherForecastService.GetForDays(days);
 
                 return Ok(weatherForecast);
             } catch(ArgumentOutOfRangeException ex)
@@ -46,7 +46,7 @@ namespace TestApp.Controllers
         {
             try
             {
-                var weatherForecast = _weatherForecastService.getForDateRange(fromDate, toDate);
+                var weatherForecast = _weatherForecastService.GetForDateRange(fromDate, toDate);
 
                 return Ok(weatherForecast);
             } catch(ArgumentException ex)

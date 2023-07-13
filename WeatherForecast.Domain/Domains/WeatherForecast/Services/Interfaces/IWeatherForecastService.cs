@@ -2,7 +2,7 @@
 {
     public interface IWeatherForecastService
     {
-        public IEnumerable<WeatherForecast> getForDays(int days);
-        public IEnumerable<WeatherForecast> getForDateRange(DateTime fromDate, DateTime toDate);
+        public IEnumerable<WeatherForecast> GetForDays(int days);
+        public IEnumerable<WeatherForecast> GetForDateRange(DateTime fromDate, DateTime toDate);
     }
 }

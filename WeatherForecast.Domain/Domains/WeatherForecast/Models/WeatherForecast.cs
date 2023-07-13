@@ -6,8 +6,8 @@ namespace TestApp.Domain.WeatherForecast
 
         public int TemperatureC { get; set; }
 
-        public int TemperatureF => WeatherForecastUtils.convertCelsiusToFarenheit(TemperatureC);
+        public int TemperatureF => WeatherForecastUtils.ConvertCelsiusToFarenheit(TemperatureC);
 
-        public string Summary => WeatherForecastUtils.getSummaryFromTemperature(TemperatureC).ToString();
+        public string Summary => WeatherForecastUtils.GetSummaryFromTemperature(TemperatureC).ToString();
     }
 }
