@@ -1,4 +1,4 @@
-﻿namespace TestApp.Enums
+﻿namespace TestApp.Domain.WeatherForecast
 {
     public enum WeatherForecastPeriod
     {

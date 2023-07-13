@@ -1,4 +1,4 @@
-﻿namespace TestApp.Enums
+﻿namespace TestApp.Domain.WeatherForecast
 {
     /// <summary>
     /// Contains a relationship between a F temperature summary and the approximate temperature this summary describes.

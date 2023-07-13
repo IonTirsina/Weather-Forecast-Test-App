@@ -1,7 +1,4 @@
-﻿using TestApp.Models;
-using TestApp.Utils.WeatherForecast;
-
-namespace TestApp.Services
+﻿namespace TestApp.Domain.WeatherForecast
 {
     public class WeatherForecastService
     {

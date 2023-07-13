@@ -1,7 +1,4 @@
-﻿using TestApp.Constants;
-using TestApp.Enums;
-
-namespace TestApp.Utils.WeatherForecast
+﻿namespace TestApp.Domain.WeatherForecast
 {
     public class WeatherForecastUtils
     {

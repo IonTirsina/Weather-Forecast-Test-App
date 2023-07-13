@@ -1,4 +1,4 @@
-﻿namespace TestApp.Constants
+﻿namespace TestApp.Domain.WeatherForecast
 {
     public static class WeatherForecastConstants
     {

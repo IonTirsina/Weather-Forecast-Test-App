@@ -1,4 +1,4 @@
-using TestApp.Services;
+using TestApp.Domain.WeatherForecast;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using TestApp.Enums;
-using TestApp.Models;
-using TestApp.Services;
+using TestApp.Domain.WeatherForecast;
 
 namespace TestApp.Controllers
 {
